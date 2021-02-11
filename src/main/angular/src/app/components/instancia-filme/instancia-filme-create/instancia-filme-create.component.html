@@ -1,0 +1,50 @@
+<mat-card>
+    <mat-card-title>Nova instância</mat-card-title>
+
+    <form [formGroup]="createInstanciaFilmeForm" (submit)="createInstancia()">
+        <mat-form-field>
+            <!-- <mat-label>Choose Date Range</mat-label>
+            <mat-date-range-input [rangePicker]="entregaRangePicker" formGroupName="createInstanciaFilmeForm">
+                <input matStartDate formControlName="startDate" placeholder="Start date">
+                <input matEndDate formControlName="endDate" placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="entregaRangePicker"></mat-datepicker-toggle>
+            <mat-date-range-picker #entregaRangePicker></mat-date-range-picker>
+            <mat-error *ngIf="createInstanciaFilmeForm.get('entregaRange').get('startDate').hasError('matStartDateInvalid')">
+                Invalid start date
+            </mat-error>
+            <mat-error *ngIf="createInstanciaFilmeForm.get('entregaRange').get('endDate').hasError('matEndDateInvalid')">
+                Invalid end date
+            </mat-error>     -->
+            <!-- <input matInput type="date" placeholder="Data de entrega" [(ngModel)]="instancia.data_entrega" name="data"
+                formControlName="data_entrega">
+             -->
+            <input 
+                type="date" placeholder="Data de entrega" name="data_entrega"
+                [ngModel]="instancia.data_entrega | date:'yyyy-MM-dd'" (ngModelChange)="instancia.data_entrega=$event"   
+                matInput formControlName="data_entrega"
+            >
+            <mat-error *ngIf="createInstanciaFilmeForm.get('data_entrega').hasError('required')">
+                Campo data de entrega é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- <br> -->
+        <mat-form-field>
+            <mat-select [(ngModel)]="selectedFilme" placeholder="Escolha o filme" name="filme_select" formControlName="filme_select">
+                <mat-option *ngFor="let filme of filmes" [value]="filme">
+                    {{ filme.titulo }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="createInstanciaFilmeForm.get('filme_select').hasError('required')">
+                Campo filme é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-card>
+<button type="submit" mat-raised-button (click)="createInstancia()" color="primary"
+    [disabled]="!createInstanciaFilmeForm.valid">
+    Criar Instância
+</button>
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button> 

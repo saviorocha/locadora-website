@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-title>Alterar instância</mat-card-title>
+
+    <form [formGroup]="updateInstanciaFilmeForm" (submit)="updateInstancia()">
+        <mat-form-field>
+            <!-- [ngModel]="instancia.data_entrega | date:'yyyy-MM-dd'" (ngModelChange)="instancia.data_entrega=$event" -->
+            <input 
+                type="date" placeholder="Data de entrega" name="data_entrega"                   
+                [(ngModel)]="instancia.data_entrega"
+                matInput formControlName="data_entrega"
+            > 
+            <mat-error *ngIf="updateInstanciaFilmeForm.get('data_entrega').hasError('required')">
+                Campo data de entrega é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Pick a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>            
+        </mat-form-field> -->
+        <mat-form-field>
+            <mat-select [(ngModel)]="filme_update" [(value)]="filme_update" placeholder="Escolha um filme" name="filme_select" formControlName="filme_select">
+                <mat-option *ngFor="let filme of filmes" [value]="filme">
+                    {{ filme.titulo }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="updateInstanciaFilmeForm.get('filme_select').hasError('required')">
+                Campo filme é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+    <button type="submit" mat-raised-button (click)="updateInstancia()" color="primary"
+    [disabled]="!updateInstanciaFilmeForm.valid">
+        Alterar instância
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

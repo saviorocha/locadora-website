@@ -1,0 +1,65 @@
+<mat-card>
+    <mat-card-title>Alterar filme</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Titulo" [(ngModel)]="filme.titulo" name="titulo">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ano" [(ngModel)]="filme.ano" name="ano">
+        </mat-form-field>
+        <div class="row">
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 1" name="diretor1" matInput [(ngModel)]="filme.diretores[0]">
+            </mat-form-field>
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 2" name="diretor2" matInput [(ngModel)]="filme.diretores[1]">
+            </mat-form-field>
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 3" name="diretor3" matInput [(ngModel)]="filme.diretores[2]">
+            </mat-form-field>
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 4" name="diretor4" matInput [(ngModel)]="filme.diretores[3]">
+            </mat-form-field>
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 5" name="diretor5" matInput [(ngModel)]="filme.diretores[4]">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <input matInput placeholder="Ator 1" [(ngModel)]="filme.atores[0]" name="ator1">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Ator 2" [(ngModel)]="filme.atores[1]" name="ator2">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Ator 3" [(ngModel)]="filme.atores[2]" name="ator3">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Ator 4" [(ngModel)]="filme.atores[3]" name="ator4">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Ator 5" [(ngModel)]="filme.atores[4]" name="ator5">
+            </mat-form-field>
+        </div>
+        <div class="genero">
+            <mat-list-item>
+                <mat-checkbox [(ngModel)]="filme.genero[0]" name="genero1">{{ generos[0] }}</mat-checkbox>
+                <mat-checkbox [(ngModel)]="filme.genero[1]" name="genero2">{{ generos[1] }}</mat-checkbox>
+                <mat-checkbox [(ngModel)]="filme.genero[2]" name="genero3">{{ generos[2] }}</mat-checkbox>
+                <mat-checkbox [(ngModel)]="filme.genero[3]" name="genero4">{{ generos[3] }}</mat-checkbox>
+                <mat-checkbox [(ngModel)]="filme.genero[4]" name="genero5">{{ generos[4] }}</mat-checkbox>
+            </mat-list-item>
+        </div>
+        <mat-form-field>
+            <input matInput placeholder="Sinopse" [(ngModel)]="filme.sinopse" name="sinopse">
+        </mat-form-field>
+    </form>
+</mat-card>
+<br>
+<button mat-raised-button (click)="updateFilme()" color="primary">
+    Alterar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>

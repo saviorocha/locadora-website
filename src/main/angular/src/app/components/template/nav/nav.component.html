@@ -1,0 +1,26 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" [(opened)]="opened" 
+    fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/">
+                <i class="material-icons">home</i>
+                Início
+            </a>
+            <a mat-list-item routerLink="/filme">
+                <i class="material-icons">movie</i>
+                Filmes
+            </a>
+            <a mat-list-item routerLink="/instancia">
+                <i class="material-icons">local_movies</i>
+                Alugar
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <button mat-raised-button color="primary" (click)="toggleNav()">
+            <i class="material-icons">{{ btnText }}</i>
+            <!-- Navegar -->
+        </button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

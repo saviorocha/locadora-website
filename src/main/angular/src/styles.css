@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+/* arquivo de seletores universais da aplicação */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.red { 
+    color: #673ab7;
+}
+/* vertical middle */
+.v-middle {
+    vertical-align: middle;
+}
+
+.msg-success {
+    background-color: #7120fc;
+    color: #FFF;
+}
+
+.msg-error {
+    background-color: #4f0200;
+    color: #FFF;
+}

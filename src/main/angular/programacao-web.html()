@@ -1,0 +1,31 @@
+<h2>Detalhes do filme {{filme.titulo | uppercase}}</h2>
+<div><span>id: </span> {{filme.id}}</div>
+<div>
+    <label>Titulo: 
+        <input [(ngModel)]="filme.titulo" placeholder="Filme" />
+    </label>
+</div>
+<div>
+    <label>Ano: 
+        <input [(ngModel)]="filme.ano" placeholder="Ano" />
+    </label>
+</div>
+<!-- <div><span>atores</span>
+</div> -->
+<div>
+    <label>Diretor: 
+        <input [(ngModel)]="filme.diretor" placeholder="Diretor"/>
+    </label>
+</div>
+<div>
+    <label>Genero: 
+        <input [(ngModel)]="filme.genero" placeholder="Genero" />
+    </label>
+</div>
+<div>
+    <label>Sinopse: 
+        <textarea [(ngModel)]="filme.sinopse" placeholder="Sinopse"></textarea>
+    </label>
+</div>
+
+

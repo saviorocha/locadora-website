@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Remover instância</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input type="text" value="{{ instancia.data_entrega | date: 'longDate':'UTC':'br' }}" name="data_entrega" disabled matInput>
+                <!-- [ngModel]="instancia.data_entrega | date: 'yyyy-MM-dd'" matInput> -->
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input type="text" value="{{ instancia.filme.titulo }}" disabled name="filme" matInput>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="avisoMsg()" color="primary">
+        Remover
+    </button>
+
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

@@ -1,0 +1,28 @@
+<div class="main">
+    <mat-card class="main home purple-bg mat-elevation-z3">
+        <mat-card-title class="title">Bem vindo!</mat-card-title>
+        <mat-card-subtitle class="purple-bg subtitle">
+            O que gostaria de fazer?
+        </mat-card-subtitle>
+    </mat-card>
+</div>
+<div class="cards">
+    <mat-card class="card home filmes mat-elevation-z4" routerLink="/filme">
+        <mat-card-subtitle class="subtitle">
+            <a class="child" routerLink="/filme">
+                <i class="material-icons">movie</i> Filmes 
+            </a>
+        </mat-card-subtitle>
+        <img mat-card-img src="../../../assets/img/popcorn.png">
+        <mat-card-content class="child">Ver todos os filmes da locadora</mat-card-content>
+    </mat-card>
+    <mat-card class="card home alugar mat-elevation-z4" routerLink="/instancia">
+        <mat-card-subtitle class="subtitle">
+            <a class="child" routerLink="/instancia">
+                <i class="material-icons a">local_movies</i>Filmes para alugar
+            </a>
+        </mat-card-subtitle>
+        <img mat-card-img src="../../../assets/img/locadora.jpg">
+        <mat-card-content class="child">Ver quais filmes estão disponíveis para alugar</mat-card-content>
+    </mat-card>
+</div>

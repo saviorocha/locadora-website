@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-title>Remover filme</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Titulo" [value]="filme.titulo" name="titulo" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Ano" [value]="filme.ano" name="ano" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Sinopse" [value]="filme.sinopse" name="sinopse" disabled>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="avisoMsg()" color="primary">
+        Remover
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

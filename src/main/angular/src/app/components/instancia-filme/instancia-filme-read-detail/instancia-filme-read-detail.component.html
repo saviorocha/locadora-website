@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Instância - {{ instancia.id }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            Data de entrega: {{ instancia.data_entrega | date: 'longDate':'UTC':'br' }}
+        </p>
+    </mat-card-content>
+    <mat-card-content>
+        <p>
+            Filme: {{ instancia.filme.titulo }}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" routerLink="/instancia" mat-button>Voltar</button>
+    </mat-card-actions>
+</mat-card>

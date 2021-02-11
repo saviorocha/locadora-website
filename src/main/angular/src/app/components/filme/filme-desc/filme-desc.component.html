@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ filme.id }} - {{ filme.titulo }}</mat-card-title>
+        <mat-card-subtitle>
+            <div class="lista" fxLayout="row">
+                <div *ngFor="let genero of filme.genero">
+                    {{ genero }} &nbsp;
+                </div>
+            </div>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            {{ filme.sinopse }}
+        </p>
+        <strong>
+            <div class="lista" fxLayout="row">
+                <p>Diretor(es):&nbsp;</p>
+                <div *ngFor="let diretor of filme.diretores">
+                    {{ diretor }} &nbsp;
+                </div>
+            </div>
+        </strong>
+        <strong>
+            <div class="lista" fxLayout="row">
+                <p>Ator(es):&nbsp;</p>
+                <div *ngFor="let ator of filme.atores">
+                    {{ ator }} &nbsp;
+                </div>
+            </div>
+        </strong>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" routerLink="/filme" mat-button>Voltar</button>
+    </mat-card-actions>
+</mat-card>

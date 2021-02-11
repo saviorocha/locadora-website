@@ -1,0 +1,3 @@
+produção
+angular.json:
+	outputPath: "..resources/metinf/resources"

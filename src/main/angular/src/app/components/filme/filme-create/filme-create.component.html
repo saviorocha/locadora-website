@@ -1,0 +1,94 @@
+<mat-card>
+    <mat-card-title>Novo filme</mat-card-title>
+    <form [formGroup]="createFilmeForm" (submit)="createFilme()">
+        <mat-form-field>
+            <input matInput placeholder="Titulo" [(ngModel)]="filme.titulo" name="titulo" formControlName="titulo">
+            <mat-error *ngIf="createFilmeForm.get('titulo').hasError('required')">
+                Campo título é <strong>obrigatório</strong>
+            </mat-error>
+            <mat-error *ngIf="createFilmeForm.get('titulo').hasError('minLength')">
+                Título precisa ter mais de dois caracteres
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ano" [(ngModel)]="filme.ano" name="ano" formControlName="ano">
+            <mat-error *ngIf="createFilmeForm.get('ano').hasError('required')">
+                Campo ano é <strong>obrigatório</strong>
+            </mat-error>
+            <mat-error *ngIf="createFilmeForm.get('ano').hasError('pattern')">
+                Ano inválido
+            </mat-error>
+        </mat-form-field>
+        <div class="row">
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 1" name="diretor" formControlName="diretores" matInput
+                    [(ngModel)]="filme.diretores[0]">
+                <mat-error *ngIf="createFilmeForm.get('diretores').hasError('required')">
+                    Campo diretor é <strong>obrigatório</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 2" name="diretor" formControlName="noValidation" matInput
+                    [(ngModel)]="filme.diretores[1]">
+            </mat-form-field>
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 3" name="diretor" formControlName="noValidation" matInput
+                    [(ngModel)]="filme.diretores[2]">
+            </mat-form-field>
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 4" name="diretor" formControlName="noValidation" matInput
+                    [(ngModel)]="filme.diretores[3]">
+            </mat-form-field>
+            <mat-form-field class="diretores">
+                <input placeholder="Diretor 5" name="diretor" formControlName="noValidation" matInput
+                    [(ngModel)]="filme.diretores[4]">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <input matInput placeholder="Ator 1" [(ngModel)]="filme.atores[0]" formControlName="atores"
+                    name="atores">
+                <mat-error *ngIf="createFilmeForm.get('atores').hasError('required')">
+                    Campo ator é <strong>obrigatório</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Ator 2" name="atores" formControlName="noValidation"
+                    [(ngModel)]="filme.atores[1]">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Ator 3" name="atores" formControlName="noValidation"
+                    [(ngModel)]="filme.atores[2]">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Ator 4" name="atores" formControlName="noValidation"
+                    [(ngModel)]="filme.atores[3]">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Ator 5" name="atores" formControlName="noValidation"
+                    [(ngModel)]="filme.atores[4]">
+            </mat-form-field>
+        </div>
+        <div class="genero">
+            <mat-list-item>
+                <mat-checkbox [(ngModel)]="filme.genero[0]" name="genero1" formControlName="noValidation">Ação</mat-checkbox>
+                <mat-checkbox [(ngModel)]="filme.genero[1]" name="genero2" formControlName="noValidation">Aventura</mat-checkbox>
+                <mat-checkbox [(ngModel)]="filme.genero[2]" name="genero3" formControlName="noValidation">Drama</mat-checkbox>
+                <mat-checkbox [(ngModel)]="filme.genero[3]" name="genero4" formControlName="noValidation">Ficção científica</mat-checkbox>
+                <mat-checkbox [(ngModel)]="filme.genero[4]" name="genero5" formControlName="noValidation">Fantasia</mat-checkbox>
+            </mat-list-item>
+        </div>  
+        <mat-form-field>
+            <input matInput placeholder="Sinopse" [(ngModel)]="filme.sinopse" name="sinopse" formControlName="sinopse">
+            <mat-error *ngIf="createFilmeForm.get('sinopse').hasError('required')">
+                Campo sinopse é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-card>
+<button type="submit" mat-raised-button (click)="createFilme()" color="primary" [disabled]="!createFilmeForm.valid">
+    Criar Filme
+</button>
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>
